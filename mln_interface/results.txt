@@ -1,0 +1,4 @@
+0.495800  Smokes(Ann)  
+0.501800  Smokes(Bob)  
+0.469000  Smokes(x)    
+0.498400  Smokes(y)    
