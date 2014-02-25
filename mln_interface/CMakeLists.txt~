@@ -50,6 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
    MLNQuery.msg
    MLNResponse.msg
    AtomProbPair.msg
+   MLNConfig.msg
  )
 
 ## Generate services in the 'srv' folder

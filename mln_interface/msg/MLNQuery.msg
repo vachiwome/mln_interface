@@ -1,9 +1,2 @@
-string mlnFiles
-string db
-string method
 string queries
-string engine
-string output_filename
-bool saveResults
-string logic
-string grammar
+

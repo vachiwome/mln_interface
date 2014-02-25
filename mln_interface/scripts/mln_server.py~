@@ -7,11 +7,31 @@ import rospy
 
 from mlnQueryTool import MLNInfer
 
-def handle_mln_query(req):
-	inf = MLNInfer()
+class Storage:
+	inf = None
+	config = None
 
-	results = inf.run(req.query.mlnFiles, req.query.db, req.query.method, req.query.queries, req.query.engine, req.query.output_filename,
-				              saveResults=req.query.saveResults, maxSteps=5000, logic=req.query.logic, grammar=req.query.grammar)
+	def __init__(self, config=None):
+		if (self.__class__.inf is None):
+			self.__class__.inf = MLNInfer()
+
+		if (config is not None):
+			if (config.mlnFiles != '' and config.db != '' and config.db != ''):
+				self.__class__.config = config
+	
+	@staticmethod
+	def getInstance(config=None):
+		s = Storage(config)
+		return (Storage.inf, Storage.config)
+	
+
+
+def handle_mln_query(req):
+	inf, conf = Storage.getInstance(req.config)
+	print conf.mlnFiles
+	results = Storage.inf.run(conf.mlnFiles, conf.db, conf.method, req.query.queries, conf.engine, conf.output_filename,
+				              saveResults=conf.saveResults, maxSteps=5000, logic=conf.logic, grammar=conf.grammar)
+			
 	tuple_list = []
 	for atom, p in results.iteritems():
 		tuple_list.append(AtomProbPair(atom, p))
