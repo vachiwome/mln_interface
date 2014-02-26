@@ -1,0 +1,73 @@
+.. mln_interface documentation master file, created by
+   sphinx-quickstart on Tue Feb 25 11:53:18 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to mln_interface's documentation!
+=========================================
+
+Server methods
+----------
+
+.. function:: handle_mln_query(req)
+   :module: scripts.mln_server
+
+   Handles the query from the client.
+
+.. function:: mln_interface_server
+   :module: scripts.mln_server
+
+   Keeps an infinite loop while waiting
+   for clients to ask for the service.
+
+.. function:: getInstance
+   :module: scripts.mln_server.Storage
+
+   Storage is a singleton class tha keeps
+   track of an MLNInfer object together with
+   the settings for the inference proceedure.
+
+Example client 
+----------
+
+.. function:: mln_interface_client(query, config=None)
+   :module: scripts.mln_mln
+
+    This is an example of the client quering the service.
+    The important thing to note is that you have the option
+    to set the configuration parameters only once and use the
+    the same settings in further calls.
+
+Messages
+----------
+This is my idea.
+
+MLNQuery.msg
++++++++++++++
+
+
+MLNResponse.msg
++++++++++++++
+
+MLNConfig.msg
++++++++++++++
+
+AtomProbPair.msg
++++++++++++++
+
+AtomTruthValuePair.msg
++++++++++++++
+
+Services
+----------
+
+MLNInterface.srv
++++++++++++++
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

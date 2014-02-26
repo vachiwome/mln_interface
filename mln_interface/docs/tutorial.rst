@@ -111,9 +111,8 @@ Services
 	**MLNQuery** - This is the query string
 
 	**MLNConfig** - This specifies which engine, inference method
-		etc is going to be used for inference. This is 
-		mandatory on the first query but optional
-		once set once.
+		etc is going to be used for inference. This should be
+		set at least once.
  
 Indices and tables
 ==================
